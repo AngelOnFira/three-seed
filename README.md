@@ -24,6 +24,16 @@ rm -rf .git
 npm install
 ```
 
+### Install with Docker
+
+```bash
+git clone --depth=1 https://github.com/edwinwebb/three-seed.git my-project
+cd my-project
+rm -rf .git
+docker build -t three-seed .
+docker run -it -v $(pwd):/app/ -w /app/ -p 8080:8080 three-seed /bin/bash -c "npm install; npm start"
+```
+
 ## Running the development server
 To see the changes you make to the starter project go to the project folder in terminal and type...
 
